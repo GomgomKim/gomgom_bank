@@ -1,20 +1,22 @@
 import type { AppProps } from 'next/app'
+import Image from "next/image";
+import styles from 'styles/main.module.css';
 
 function Main({ Component, pageProps }: AppProps) {
   return <>
-  <div className="container">
-  <svg id="circle-nav-services" width="100%" height="100%" viewBox="0 0 650 550">
-    <svg x="224" y="50" width="200" height="200" viewBox="0 0 500 500">
-      <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="250.2542" y1="496.283" x2="250.2542" y2="-.2102">
-        <stop offset="0" stopColor="#0F68A9"/>
-        <stop offset="1" stopColor="#3DDEED" stopOpacity="0"/>
-      </linearGradient>
-      <path fill="url(#a)" d="M250.3 0c137 0 248.1 111.1 248.1 248.1S387.3 496.2 250.3 496.2 2.2 385.1 2.2 248.1 113.2 0 250.3 0C112.5 0 .8 111.7.8 249.5S112.5 499 250.3 499s249.5-111.7 249.5-249.5S388 0 250.3 0z"/>
-    </svg>
-    
-    <circle cx="325" cy="150" r="80" className="center"/>
-  </svg>
-</div>
+    <div className={styles.background}>
+      <div className={styles.overlay}>
+        <h2>코딩 마차</h2>
+        <h3>이미지 컴포넌트로 배경처리하기</h3>
+      </div>
+      <Image
+        src="/images/blockchain_back.jpg"
+        alt="메인 배경 이미지"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="center"
+      />
+    </div>
   </>
 }
 
