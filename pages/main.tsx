@@ -17,7 +17,6 @@ function Main({ Component, pageProps }: AppProps) {
       <Image
         className={styles.backgoundImage}
         src="/images/blockchain_back.jpg"
-        alt="메인 배경 이미지"
         layout="fill"
         objectFit="cover"
         objectPosition="center"
