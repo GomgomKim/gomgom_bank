@@ -1,13 +1,9 @@
 import type { AppProps } from 'next/app'
 import Image from "next/image";
-<<<<<<< HEAD
 import styles from 'styles/main.module.css';
 import axios from 'axios';
-=======
-import styles from '../styles/main.module.css';
->>>>>>> 25a5f458f9ece650454ce514a614e7dfcf462f3f
 
-function Main({ list: Array }) {
+function Main({ list }) {
   return <>
     {console.log("pageProps : ", list)}
     <div className={styles.background}>
