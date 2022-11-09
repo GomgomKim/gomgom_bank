@@ -1,12 +1,15 @@
 import type { AppProps } from 'next/app'
 import Image from "next/image";
 import styles from 'styles/main.module.css';
+import axios from 'axios';
 
-function Main({ Component, pageProps }: AppProps) {
+function Main({ list: Array }) {
   return <>
+    {console.log("pageProps : ", list)}
     <div className={styles.background}>
       <div className={styles.overlay}>
       </div>
+      
       <form method="get" action="https://testapi.openbanking.or.kr/oauth/2.0/authorize" target="_blank">
         <input type="hidden" name="response_type" value="code"/>
         <input type="hidden" name="client_id" value="eb821e42-3410-4dec-98f2-f2a8cc40af5d"/>
@@ -28,3 +31,16 @@ function Main({ Component, pageProps }: AppProps) {
 }
 
 export default Main
+
+export const getStaticProps = async () => {
+  const res = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
+  const data = res.data;
+
+  console.log(data);
+
+  return {
+    props: {
+      list: data,
+    },
+  };
+};
