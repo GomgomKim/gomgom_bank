@@ -1,7 +1,11 @@
 import type { AppProps } from 'next/app'
 import Image from "next/image";
+<<<<<<< HEAD
 import styles from 'styles/main.module.css';
 import axios from 'axios';
+=======
+import styles from '../styles/main.module.css';
+>>>>>>> 25a5f458f9ece650454ce514a614e7dfcf462f3f
 
 function Main({ list: Array }) {
   return <>
@@ -20,8 +24,8 @@ function Main({ list: Array }) {
         <input type="submit" value="requestAuth"/>
       </form>
       <Image
+        className={styles.backgoundImage}
         src="/images/blockchain_back.jpg"
-        alt="메인 배경 이미지"
         layout="fill"
         objectFit="cover"
         objectPosition="center"
