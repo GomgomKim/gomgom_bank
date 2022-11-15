@@ -3,9 +3,8 @@ import Image from "next/image";
 import styles from 'styles/main.module.css';
 import axios from 'axios';
 
-function Main({ list }) {
+function Main({}) {
   return <>
-    {console.log("pageProps : ", list)}
     <div className={styles.background}>
       <div className={styles.overlay}>
       </div>
@@ -33,14 +32,4 @@ function Main({ list }) {
 export default Main
 
 export const getStaticProps = async () => {
-  const res = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
-  const data = res.data;
-
-  console.log(data);
-
-  return {
-    props: {
-      list: data,
-    },
-  };
 };
